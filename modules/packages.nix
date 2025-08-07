@@ -27,5 +27,6 @@
     gnomeExtensions.vitals
     gnomeExtensions.forge
     gnomeExtensions.tweaks-in-system-menu
+    gnomeExtensions.activate_gnome
   ];
 }
