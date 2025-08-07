@@ -9,10 +9,6 @@
       layout  = "us";
       variant = "";
     };
-    hidpi = {
-      enable                 = true;
-      allowNonIntegerScaling = true;
-    };
     dpi = 166;
   };
 
