@@ -9,9 +9,27 @@
       layout  = "us";
       variant = "";
     };
-    dpi = 166;
+    
   };
 
+  services.libinput = {
+    enable = true;
+    mouse.accelProfile = "flat";
+    touchpad.accelProfile = "flat";
+  };
+  
+  hardware = {
+    graphics.enable      = true;
+    graphics.enable32Bit = true;
+    
+    nvidia = {
+      open = false;
+      modesetting.enable = true;
+      nvidiaSettings = true;  
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+  };
+  
   # GNOME desktop
   services.displayManager.gdm.enable   = true;
   services.desktopManager.gnome.enable = true;
