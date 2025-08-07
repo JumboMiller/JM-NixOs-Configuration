@@ -33,6 +33,7 @@
   # GNOME desktop
   services.displayManager.gdm.enable   = true;
   services.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.fractionalScaling = true;
 
   # Printing disabled
   services.printing.enable = false;
