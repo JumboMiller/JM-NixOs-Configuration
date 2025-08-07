@@ -9,6 +9,7 @@
     hyprland
     git
     spotify
+    lutris
 
     google-fonts
     google-chrome
@@ -21,11 +22,10 @@
     gnomeExtensions.appindicator
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.arcmenu
     gnomeExtensions.desktop-cube
     gnomeExtensions.just-perfection
     gnomeExtensions.vitals
-    gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.forge
+    gnomeExtensions.tweaks-in-system-menu
   ];
 }
