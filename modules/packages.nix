@@ -11,8 +11,8 @@
     spotify
     lutris
 
-    google-fonts
     google-chrome
+    noto-fonts
 
     xorg.xdpyinfo
 
@@ -30,8 +30,9 @@
     gnomeExtensions.forge
     gnomeExtensions.tweaks-in-system-menu
     gnomeExtensions.activate_gnome
+    
     dconf-editor
-
+    refine
     nightfox-gtk-theme
   ];
 }
