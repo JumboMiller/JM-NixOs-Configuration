@@ -31,9 +31,15 @@
   };
   
   # GNOME desktop
-  services.displayManager.gdm.enable   = true;
-  services.desktopManager.gnome.enable = true;
-  services.desktopManager.gnome.fractionalScaling = true;
+  services.displayManager = {
+    gdm.enable = true;
+    gnome.enable = true;
+    gnome.extraGSettingsOverrides = {
+      "org.gnome.mutter" = {
+        experimental-features = [ "scale-monitor-framebuffer" ];
+      };
+    };
+  };
 
   # Printing disabled
   services.printing.enable = false;
