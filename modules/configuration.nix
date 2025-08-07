@@ -15,14 +15,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.graphics = {
-    enable       = true;   
-    enable32Bit  = true;   
+  hardware = {
+    graphics.enable           = true;
+    graphics.enable32Bit      = true;
+    nvidia.open               = false;
+    nvidia.modesetting.enable = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia.open = true;
+  services.xserver = {
+    enable       = true;
+    videoDrivers = [ "nvidia" ];
+  };
 
   system.stateVersion = "25.05";
 }
