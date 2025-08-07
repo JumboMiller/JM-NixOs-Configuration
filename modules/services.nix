@@ -31,14 +31,9 @@
   };
   
   # GNOME desktop
-  services.displayManager = {
-    gdm.enable = true;
-    gnome.enable = true;
-    gnome.extraGSettingsOverrides = {
-      "org.gnome.mutter" = {
-        experimental-features = [ "scale-monitor-framebuffer" ];
-      };
-    };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome = {
+    enable = true;
   };
 
   # Printing disabled
