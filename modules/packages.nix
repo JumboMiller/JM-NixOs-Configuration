@@ -14,6 +14,8 @@
     google-fonts
     google-chrome
 
+    xdpyinfo
+
     gnomeExtensions.applications-menu
     gnomeExtensions.app-hider
     gnomeExtensions.open-bar
@@ -28,5 +30,6 @@
     gnomeExtensions.forge
     gnomeExtensions.tweaks-in-system-menu
     gnomeExtensions.activate_gnome
+    
   ];
 }
