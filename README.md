@@ -1,17 +1,18 @@
+
 # NixOS Flake Configuration
 
 ## About
 
-This repository contains a modular NixOS configuration structured via flakes. All system settings are split into separate files for easy maintenance, extension, and portability across different machines.
+This repository contains a modular NixOS configuration managed with flakes. All system settings are split into separate files for easy maintenance and extension.
 
 ## Structure
 
 ```
-JM-flake/
+JM-NixOs-Configuration/
 ├── flake.nix
 └── modules/
     ├── configuration.nix
-    ├── hardware-configuration.nix
+    ├── hardware-configuration.nix (not included by default)
     ├── locales.nix
     ├── nix.nix
     ├── packages.nix
@@ -21,17 +22,31 @@ JM-flake/
     └── users.nix
 ```
 
-- **flake.nix** — The main flake file that assembles all the modules into a single configuration.
-- **modules/** — Folder with individual NixOS modules:
-  - `configuration.nix` — Core system parameters.
-  - `hardware-configuration.nix` — Auto-generated hardware settings.
-  - `locales.nix` — Language and regional settings.
-  - `nix.nix` — Nix system and cache configuration.
-  - `packages.nix` — List of packages to install.
-  - `programs.nix` — Program and utility settings.
-  - `security.nix` — Security, firewall, and permissions.
-  - `services.nix` — Services and daemons (desktop, ssh, gdm, etc.).
-  - `users.nix` — Users and groups.
+- **flake.nix** — main flake file that assembles all modules into a single configuration
+- **modules/** — folder with individual NixOS modules:
+  - `configuration.nix` — core system parameters
+  - `hardware-configuration.nix` — auto-generated hardware settings (**see below!**)
+  - `locales.nix` — language and regional settings
+  - `nix.nix` — Nix system and cache configuration
+  - `packages.nix` — list of packages to install
+  - `programs.nix` — program and utility settings
+  - `security.nix` — security, firewall, permissions
+  - `services.nix` — services and daemons (desktop, ssh, gdm, etc.)
+  - `users.nix` — users and groups
+
+## Important: hardware-configuration.nix
+
+The file `hardware-configuration.nix` is unique for every computer. It is not included in this repository by default.
+
+**After cloning the repository:**
+
+1. Copy your own hardware configuration file from your system:
+   ```sh
+   cp /etc/nixos/hardware-configuration.nix -> place you save flake
+   ```
+   (If you don't have it yet, you can generate it with `sudo nixos-generate-config --root /mnt` during installation.)
+
+**Never use someone else's hardware-configuration.nix!**
 
 ## Usage
 
@@ -42,24 +57,24 @@ JM-flake/
 
 2. **Apply the configuration:**
    ```sh
-   sudo nixos-rebuild switch --flake /home/jumbo/JM-flake#JMComputer
+   sudo nixos-rebuild switch --flake /path/to/JM-NixOs-Configuration#<hostname>
    ```
-   Where `/home/jumbo/JM-flake` is the path to your flake folder and `JMComputer` is the hostname defined in your flake.
+   Where `/path/to/JM-NixOs-Configuration` is the path to this repository, and `<hostname>` is the hostname defined in your flake.
 
 ## Features
 
-- Modular files make it easy to edit and add new settings.
-- All configuration is versioned with git.
-- Supports Wayland and X11, with automatic hardware configuration.
-- Home Manager integration via flake (optional separate module).
+- Modular files make it easy to edit and add new settings
+- All configuration is versioned with git (except hardware-configuration.nix)
+- Supports Wayland and X11, with automatic hardware configuration
+- Optional Home Manager integration via a separate module
 
 ## Tips
 
-- For recent NixOS versions, use the new service options:
+- For GNOME desktop, use:
   - `services.desktopManager.gnome.enable`
   - `services.displayManager.gdm.enable`
-- For Wayland, set keyboard layouts via environment variables or in your WM config.
+- For Wayland, set keyboard layouts via environment variables or in your window manager config
 
 ---
 
-**For questions or suggestions, feel free to open an issue or pull request!**
+**For questions or suggestions, open an issue or pull request!**
