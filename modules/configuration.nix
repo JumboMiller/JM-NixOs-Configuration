@@ -17,11 +17,12 @@
 
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     driSupport32Bit = true;
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  
+
+  hardware.nvidia.open = true;
+
   system.stateVersion = "25.05";
 }
