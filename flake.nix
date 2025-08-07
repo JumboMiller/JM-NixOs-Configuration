@@ -9,15 +9,8 @@
       JMComputer = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./modules/configuration.nix
-          ./modules/locales.nix
-          ./modules/nix.nix
-          ./modules/packages.nix
-          ./modules/programs.nix
-          ./modules/security.nix
-          ./modules/services.nix
-          ./modules/users.nix
-          ./modules/hardware-configuration.nix
+          ./configuration.nix
+          ./hardware-configuration.nix
         ];
       };
     };
