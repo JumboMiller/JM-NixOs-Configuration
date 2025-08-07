@@ -9,6 +9,11 @@
       layout  = "us";
       variant = "";
     };
+    hidpi = {
+      enable                 = true;
+      allowNonIntegerScaling = true;
+    };
+    dpi = 166;
   };
 
   # GNOME desktop

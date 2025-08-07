@@ -18,7 +18,6 @@
           ./modules/services.nix
           ./modules/users.nix
           ./modules/hardware-configuration.nix
-          ./modules/ui-scaling.nix
         ];
       };
     };

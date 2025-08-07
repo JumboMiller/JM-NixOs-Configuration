@@ -14,7 +14,7 @@
     google-fonts
     google-chrome
 
-    xdpyinfo
+    xorg.xdpyinfo
 
     gnomeExtensions.applications-menu
     gnomeExtensions.app-hider
